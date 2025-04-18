@@ -5,6 +5,7 @@ const path = require("path");
 // extra security packages
 const helmet = require("helmet");
 const xss = require("xss-clean");
+const cors = require("cors");
 
 const express = require("express");
 const app = express();
@@ -20,6 +21,12 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 
 app.use(express.json());
 app.use(helmet());
+const corsOptions = {
+  origin: "http://localhost:3000", // Replace with your frontend's URL
+  credentials: true, // Allow cookies if needed
+};
+
+app.use(cors(corsOptions));
 
 app.use(xss());
 
