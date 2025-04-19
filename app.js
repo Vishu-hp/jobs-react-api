@@ -22,7 +22,7 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 app.use(express.json());
 app.use(helmet());
 const corsOptions = {
-  origin: "http://localhost:3000", // Replace with your frontend's URL
+  origin: "https://jobman-react.netlify.app", // Replace with your frontend's URL
   credentials: true, // Allow cookies if needed
 };
 
